@@ -25,10 +25,12 @@ public class Lector {
             archivo = new File("assets/ListadoProducto.txt");
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
-            String separador="|";
-            String[] linea = br.readLine().split(" |    ");
-            System.out.println( linea[0]);
-
+            String separador = "\\|";
+            String[] linea = br.readLine().split(separador);
+            for(String i : linea) {
+                i = i.replaceAll("\\s", "");
+            }
+            System.out.println(linea[0]);
         } catch (Exception e) {
             salida = e.toString();
         } finally {
