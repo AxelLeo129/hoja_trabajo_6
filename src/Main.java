@@ -8,7 +8,8 @@ package src;
 public class Main {
 
     public static void main(String[] args){
-        System.out.println("Hola Mundo");   
+        Lector.readFile("aqui ingresa tipo de mapa para mandar a fabrica");
+
     }
     
 }
