@@ -3,7 +3,7 @@ package src;
 /**
  * @author Axel Lopez
  * @author Luis Gonzalez
- * GIT: https://github.com/LPELCRACK896/hojaDeTrabajo4ALgoritmos.git
+ * GIT: https://github.com/AxelLeo129/hoja_trabajo_6.git
  */
 public class Main {
 
