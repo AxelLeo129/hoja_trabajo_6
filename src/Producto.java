@@ -26,4 +26,7 @@ public class Producto {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+    public String toString(){
+        return "-Nombre: "+nombre+"\n\tStock: "+cantidad;
+    }
 }

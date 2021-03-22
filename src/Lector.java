@@ -1,9 +1,6 @@
 package src;
 import java.io.*;
-import java.util.AbstractMap;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Lector {
 
@@ -33,8 +30,9 @@ public class Lector {
                 for (String i : linea) {
                     i = i.replaceAll("\\s", "");
                 }
+                //System.out.println("."+linea[0]+".");
+                //System.out.println("."+linea[1]+".");
                 elMapa.agregarElemento(linea[0], linea[1]);
-                System.out.println(linea[0]+": "+linea[1]);
             }
         } catch (Exception e) {
             salida = e.toString();

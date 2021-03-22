@@ -21,6 +21,7 @@ public class HashMapa implements Mapas{
                 nuevoValor= miMapa.get(i);
                 System.out.println("Llave encontrada");
                 for(Producto j: nuevoValor){
+                    System.out.println("--"+j.getNombre()+"--");
                     if(j.getNombre().equals(valor)) {
                         j.masUno();
                         System.out.println("Producto repetido, sumado uno al stock");
@@ -43,44 +44,51 @@ public class HashMapa implements Mapas{
         }
 
     }
-
-
     @Override
     public Boolean encontrarPorValor(String valor) {
         for (String i: miMapa.keySet()){
-            if(miMapa.get(i).contains(valor)) return true;
+            ArrayList<Producto> val= miMapa.get(i);
+            for (Producto j: val){
+                if(j.getNombre().equals(valor)) return true;
+            }
         }
        return false;
     }
-
     @Override
     public String mostrarCategoria(String nombreDeProducto) {
         for (String i: miMapa.keySet()){
-            miMapa.get(i).contains(nombreDeProducto);
-            return "Categoria"+i;
+            ArrayList<Producto> valor= miMapa.get(i);
+            for (Producto j: valor){
+                if(j.getNombre().equals(nombreDeProducto)) return "Categoria: "+i;
+            }
+
     }
     return "El producto ingresado no fue encontrado";}
     @Override
     public String mostrarDatosDeProducto(String nombreDeProducto) {
             for (String i: miMapa.keySet()){
-                miMapa.get(i).contains(nombreDeProducto);
-                return "Categoria: "+i+"\nNombre de producto: "+nombreDeProducto;
+                ArrayList<Producto> valor= miMapa.get(i);
+                for (Producto j: valor){
+                    if(j.getNombre().equals(nombreDeProducto)) return "Categoria: "+i+"\n"+j.toString();
+                }
             }
             return "El producto ingresado no fue encontrado";
     }
 
     @Override
     public String mostrarTodoInventario() {
-        String res="No hay datos disponibles";
+        String res="******************";
         ArrayList<Producto> nuevoValor;
         for (String i:  miMapa.keySet()){
-            res="Categoria: "+i;
+            res=res+"\nCategoria: "+i+".";
             nuevoValor= miMapa.get(i);
             for (Producto j:  nuevoValor){
-                res=res+"\n - "+j.getNombre();
+                res=res+"\n - "+j.getNombre()+"\n\t -Stock: "+j.getCantidad();
             }
-            res=res+"\n**********************";
+            res=res+"\n******************";
         }
+        if(res.equals("******************")) res="No hay datos disponibles";
+        System.out.println(res);
         return res;
     }
 }
