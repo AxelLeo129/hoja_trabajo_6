@@ -15,22 +15,27 @@ public class Lector {
     /**
      * @return devuelve la linea escrita en el txt
      */
-    public static void readFile(String tipoDeMapa) {
+    public static Mapas readFile(String tipoDeMapa) {
         File archivo = null;
         FileReader fr = null;
         BufferedReader br = null;
         String salida = "";
-
+        Mapas elMapa= FabricaMaps.FabricaMaps(tipoDeMapa);
+        if (elMapa==null) return null;
         try {
             archivo = new File("assets/ListadoProducto.txt");
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
-            String separador = "\\|";
-            String[] linea = br.readLine().split(separador);
-            for(String i : linea) {
-                i = i.replaceAll("\\s", "");
+            String bfRead;
+            while((bfRead = br.readLine() )!= null) {
+                String separador = "\\|";
+                String[] linea = br.readLine().split(separador);
+                for (String i : linea) {
+                    i = i.replaceAll("\\s", "");
+                }
+                elMapa.agregarElemento(linea[0], linea[1]);
+                System.out.println(linea[0]+": "+linea[1]);
             }
-            System.out.println(linea[0]);
         } catch (Exception e) {
             salida = e.toString();
         } finally {
@@ -42,6 +47,7 @@ public class Lector {
                 salida = e2.toString();
             }
         }
+        return elMapa;
 
     }
 

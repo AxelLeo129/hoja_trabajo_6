@@ -9,12 +9,13 @@ public class LinkedHashMapa implements Mapas{
     }
 
     @Override
-    public void agregarElemento() {
+    public void agregarElemento(String clave, String valor) {
 
     }
 
+
     @Override
-    public String encontrarPorValor() {
+    public Boolean encontrarPorValor(String valor) {
         return null;
     }
 

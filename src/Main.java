@@ -8,6 +8,7 @@ package src;
 public class Main {
 
     public static void main(String[] args){
+        Mapas miMapa;
         Lector.readFile("aqui ingresa tipo de mapa para mandar a fabrica");
 
     }
