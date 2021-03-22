@@ -1,35 +1,44 @@
 package src;
+import java.util.Set;
 import java.util.TreeMap;
-public class TreeMapa implements Mapas{
+public class TreeMapa <E, T> implements Mapa <E, T> {
+
+    
+    private TreeMap<E, T> hashmapa;
+
+    public TreeMapa(){
+        this.hashmapa = new TreeMap<E, T>();
+    }
+    
+    @Override
+    public void put(E clave, T valor) {
+        this.hashmapa.put(clave, valor);
+        
+    }
+
+    @Override
+    public T get(E clave) {
+        return this.hashmapa.get(clave);
+    }
+
+    @Override
+    public void remove(E clave) {
+        this.hashmapa.remove(clave);
+    }
+
+    @Override
+    public void clear() {
+        this.hashmapa.clear();
+    }
 
     @Override
     public int size() {
-        return 0;
+        return this.hashmapa.size();
     }
 
     @Override
-    public void agregarElemento(String clave, String valor) {
-
+    public Set<E> keySet() {
+        return this.hashmapa.keySet();
     }
 
-
-    @Override
-    public Boolean encontrarPorValor(String valor) {
-        return null;
-    }
-
-    @Override
-    public String mostrarCategoria(String nombreDeProducto) {
-        return null;
-    }
-
-    @Override
-    public String mostrarDatosDeProducto(String nombreDeProducto) {
-        return null;
-    }
-
-    @Override
-    public String mostrarTodoInventario() {
-        return null;
-    }
 }

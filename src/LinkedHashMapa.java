@@ -1,36 +1,43 @@
 package src;
 import java.util.LinkedHashMap;
-public class LinkedHashMapa implements Mapas{
-    private LinkedHashMap miMapa;
+import java.util.Set;
+
+public class LinkedHashMapa <E, T> implements Mapa <E, T>{
+
+    private LinkedHashMap<E, T> hashmapa;
+
+    public LinkedHashMapa() {
+        this.hashmapa = new LinkedHashMap<E, T>();
+    }
+
+    @Override
+    public void put(E clave, T valor) {
+        this.hashmapa.put(clave, valor);
+    }
+
+    @Override
+    public T get(E clave) {
+        return this.hashmapa.get(clave);
+    }
+
+    @Override
+    public void remove(E clave) {
+        this.hashmapa.remove(clave);
+    }
+
+    @Override
+    public void clear() {
+        this.hashmapa.clear();
+    }
 
     @Override
     public int size() {
-        return 0;
+        return this.hashmapa.size();
     }
 
     @Override
-    public void agregarElemento(String clave, String valor) {
-
+    public Set<E> keySet() {
+        return this.hashmapa.keySet();
     }
 
-
-    @Override
-    public Boolean encontrarPorValor(String valor) {
-        return null;
-    }
-
-    @Override
-    public String mostrarCategoria(String nombreDeProducto) {
-        return null;
-    }
-
-    @Override
-    public String mostrarDatosDeProducto(String nombreDeProducto) {
-        return null;
-    }
-
-    @Override
-    public String mostrarTodoInventario() {
-        return null;
-    }
 }

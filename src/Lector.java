@@ -12,12 +12,13 @@ public class Lector {
     /**
      * @return devuelve la linea escrita en el txt
      */
-    public static Mapas readFile(String tipoDeMapa) {
+    public static Tienda readFile(String tipoDeMapa) {
         File archivo = null;
         FileReader fr = null;
         BufferedReader br = null;
         String salida = "";
-        Mapas elMapa= FabricaMaps.FabricaMaps(tipoDeMapa);
+        Tienda elMapa = new Tienda();
+        elMapa.setMap(tipoDeMapa);
         if (elMapa==null) return null;
         try {
             archivo = new File("assets/ListadoProducto.txt");
