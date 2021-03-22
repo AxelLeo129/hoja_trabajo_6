@@ -8,16 +8,7 @@ package src;
 public class Main {
 
     public static void main(String[] args){
-        //Los productos tienen un \t  antes del nombre
-        //Las categorias tienen un espacio al final
-        Tienda miMapa;
-        miMapa = Lector.readFile("HashMap");
-        System.out.println("********************\n**********************\n*********************");
-        miMapa.agregarElemento("Carnes ", "\tToro");
-        miMapa.agregarElemento("Carnes ", "\tToro");
-        System.out.println(miMapa.mostrarDatosDeProducto("\tToro"));
-        System.out.println(miMapa.mostrarCategoria("\tToro"));
-        //miMapa.mostrarTodoInventario();
+        Vista.execute();
 
     }
     

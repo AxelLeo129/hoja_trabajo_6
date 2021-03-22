@@ -92,7 +92,6 @@ public class Tienda {
             res = res + "\n******************";
         }
         if (res.equals("******************")) res = "No hay datos disponibles";
-        System.out.println(res);
         return res;
     }
 
