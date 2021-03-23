@@ -1,4 +1,4 @@
-package src;
+//package src;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -10,7 +10,7 @@ public class HashMapa <E, T> implements Mapa <E, T> {
         this.hashmapa = new HashMap<E, T>();
     }
 
-    @Override
+
     public void put(E clave, T valor) {
         this.hashmapa.put(clave, valor);
         
