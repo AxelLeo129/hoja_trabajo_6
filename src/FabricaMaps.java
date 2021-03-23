@@ -1,4 +1,4 @@
-//package src;
+package src;
 
 public class FabricaMaps {
     public static Mapa construir(String tipoDeMapAImplementar){
